@@ -1,0 +1,50 @@
+{
+  "Baseline -GET /api/users" : {
+    "transaction" : "Baseline -GET /api/users",
+    "sampleCount" : 50,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 77.62,
+    "medianResTime" : 47.0,
+    "minResTime" : 33.0,
+    "maxResTime" : 868.0,
+    "pct1ResTime" : 138.8,
+    "pct2ResTime" : 152.7999999999999,
+    "pct3ResTime" : 868.0,
+    "throughput" : 5.46448087431694,
+    "receivedKBytesPerSec" : 18.515838456284154,
+    "sentKBytesPerSec" : 1.1259818989071038
+  },
+  "Total" : {
+    "transaction" : "Total",
+    "sampleCount" : 300,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 72.31000000000002,
+    "medianResTime" : 47.0,
+    "minResTime" : 27.0,
+    "maxResTime" : 868.0,
+    "pct1ResTime" : 139.0,
+    "pct2ResTime" : 147.89999999999998,
+    "pct3ResTime" : 647.9500000000019,
+    "throughput" : 15.151515151515152,
+    "receivedKBytesPerSec" : 51.33379695391414,
+    "sentKBytesPerSec" : 3.1220407196969697
+  },
+  "50 Users - GET /api/users" : {
+    "transaction" : "50 Users - GET /api/users",
+    "sampleCount" : 250,
+    "errorCount" : 0,
+    "errorPct" : 0.0,
+    "meanResTime" : 71.248,
+    "medianResTime" : 47.5,
+    "minResTime" : 27.0,
+    "maxResTime" : 847.0,
+    "pct1ResTime" : 139.0,
+    "pct2ResTime" : 148.0,
+    "pct3ResTime" : 545.4500000000019,
+    "throughput" : 12.626262626262626,
+    "receivedKBytesPerSec" : 42.77723524305556,
+    "sentKBytesPerSec" : 2.6017005997474745
+  }
+}

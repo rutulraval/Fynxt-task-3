@@ -1,0 +1,22 @@
+# Maven build output
+/target/
+/test-output/
+
+# Java compiled artifacts
+*.class
+
+# IDE files
+.idea/
+*.iml
+
+# Local browser driver binaries (WebDriverManager is used instead)
+/src/test/java/browserDirectory/chromedriver.exe
+/src/test/java/browserDirectory/chromedriver-Mac
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Old working docs, not part of submission
+/_archive_do_not_submit/
+

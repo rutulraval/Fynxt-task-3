@@ -1,0 +1,27 @@
+$kind: http-request
+url: "{{baseUrl}}/api/users/{{userId}}"
+method: PUT
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: '{"name": "Jane Doe", "job": "{{job}}"}'
+scripts:
+  - type: beforeRequest
+    code: |-
+      if (!pm.environment.get("userId")) {
+          pm.environment.set("userId", 2);
+      }
+    language: text/javascript
+  - type: afterResponse
+    code: |-
+      pm.test("Status code is 200", () => pm.response.to.have.status(200));
+      pm.test("Response time < 2000ms", () => pm.expect(pm.response.responseTime).to.be.below(2000));
+      pm.test("Content-Type is JSON", () => pm.expect(pm.response.headers.get("Content-Type")).to.include("application/json"));
+      pm.test("Response has updatedAt", () => {
+          const json = pm.response.json();
+          pm.expect(json).to.have.property('updatedAt');
+          pm.expect(Number.isNaN(Date.parse(json.updatedAt))).to.equal(false);
+      });
+    language: text/javascript
+order: 1000

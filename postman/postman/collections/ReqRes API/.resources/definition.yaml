@@ -1,0 +1,22 @@
+$kind: collection
+name: ReqRes API
+description: Postman collection for ReqRes API testing at https://reqres.in
+variables:
+  baseUrl: https://reqres.in
+  api_key: ""
+scripts:
+  - type: beforeRequest
+    code: |-
+      pm.test("baseUrl environment variable is set", () => {
+          pm.expect(pm.environment.get("baseUrl")).to.be.a("string").and.not.empty;
+      });
+    language: text/javascript
+auth:
+  - id: 08fd5ce1-067b-4973-9d8c-0b095b1efa5e
+    type: apikey
+    name: API Key
+    credentials:
+      key: x-api-key
+      value: "{{api_key}}"
+    rules:
+      url: https://reqres.in

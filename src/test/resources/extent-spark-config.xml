@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+    <configuration>
+        <theme>dark</theme>
+        <documentTitle>MissionQA Execution Report</documentTitle>
+        <reportName>MissionQA Extent Spark Report</reportName>
+        <timelineEnabled>true</timelineEnabled>
+        <encoding>UTF-8</encoding>
+        <protocol>https</protocol>
+    </configuration>
+</extentreports>
+

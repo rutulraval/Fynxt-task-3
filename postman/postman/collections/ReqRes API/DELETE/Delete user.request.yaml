@@ -1,0 +1,16 @@
+$kind: http-request
+url: "{{baseUrl}}/api/users/{{userId}}"
+method: DELETE
+scripts:
+  - type: beforeRequest
+    code: |-
+      if (!pm.environment.get("userId")) {
+          pm.environment.set("userId", 2);
+      }
+    language: text/javascript
+  - type: afterResponse
+    code: |-
+      pm.test("Status code is 204", () => pm.response.to.have.status(204));
+      pm.test("Response body is empty", () => pm.expect(pm.response.text()).to.equal(""));
+    language: text/javascript
+order: 1000

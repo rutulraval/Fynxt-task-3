@@ -1,0 +1,29 @@
+$kind: http-request
+url: "{{baseUrl}}/api/users?page=1"
+method: GET
+headers:
+  Accept: application/json
+queryParams:
+  page: "1"
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("Status code is 200", () => pm.response.to.have.status(200));
+      pm.test("Response time < 2000ms", () => pm.expect(pm.response.responseTime).to.be.below(2000));
+      pm.test("Content-Type is JSON", () => pm.expect(pm.response.headers.get("Content-Type")).to.include("application/json"));
+      pm.test("Response has data array", () => {
+          const json = pm.response.json();
+          pm.expect(json).to.have.property('data');
+          pm.expect(json.data).to.be.an('array');
+      });
+      pm.test("Response matches list-users schema", () => {
+          const json = pm.response.json();
+          pm.expect(json).to.have.property('page');
+          pm.expect(json).to.have.property('per_page');
+          pm.expect(json).to.have.property('total');
+          pm.expect(json).to.have.property('total_pages');
+          pm.expect(json).to.have.property('data');
+          pm.expect(json.data[0]).to.have.all.keys('id', 'email', 'first_name', 'last_name', 'avatar');
+      });
+    language: text/javascript
+order: 1000

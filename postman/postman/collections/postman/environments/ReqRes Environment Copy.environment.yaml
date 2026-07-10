@@ -1,0 +1,10 @@
+name: ReqRes Environment Copy
+values:
+  - key: baseUrl
+    value: 'https://reqres.in'
+  - key: apiKey
+    value: ''
+  - key: userId
+    value: ''
+  - key: job
+    value: QA Engineer

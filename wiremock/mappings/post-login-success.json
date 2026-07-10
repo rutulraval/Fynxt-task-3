@@ -1,0 +1,24 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/api/login",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$.email"
+      },
+      {
+        "matchesJsonPath": "$.password"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "token": "QpwL5tke4Pnpja7X4"
+    }
+  }
+}
+
